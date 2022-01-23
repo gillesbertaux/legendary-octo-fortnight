@@ -1,0 +1,21 @@
+<html>
+  <script>
+    fetch('https://api.giphy.com/v1/gifs/search?api_key=5TxOS8YG3pWBuLjJGYwtEC3jtOZr1dJj&q=hi+there&limit=1&offset=0&rating=g&lang=en')
+      .then(response => response.json())
+      .then(json => {
+        var data = json.data[0].images.url
+        console.log('Success:', data);
+        document.getElementById('meme').setAttribute('src', data);
+      })
+  </script>
+  <style>
+    #meme {
+        max-width: 100%;
+        height: auto;
+        display: block;
+      }
+  </style>
+  <body>
+    <img id="meme" src="" alt="">
+  </body>
+</html>
